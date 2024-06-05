@@ -36,7 +36,7 @@ export default function SearchSong() {
        
        
         
-    }, [songs, searchTerm]);
+    }, [songs, searchTerm, navigate]);
     
     
     const handleDelete = (id) => {

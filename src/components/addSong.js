@@ -37,7 +37,7 @@ const Button = styled.button`
 // AddSong component
 function AddSong() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  
   
   const { songs} = useSelector(state => state.song);
   const lastIndex = songs.length - 1; // Index of the last item

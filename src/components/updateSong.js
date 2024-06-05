@@ -43,7 +43,7 @@ const UpdateSong = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 const [foundSong, setFoundSong] = useState(null);
-const { songs, loading, error, searchState } = useSelector(state => state.song);
+const { songs} = useSelector(state => state.song);
 const navigate = useNavigate();
 console.log("id:", id); // Check the value of id
 
@@ -73,7 +73,7 @@ useEffect(() => {
 
   // Set foundSong state
   setFoundSong(usong);
-}, [songs, id]);
+}, [songs, id,songMap]);
 
 // Ensure foundSong state is correctly set
 console.log("foundSong:", foundSong);
