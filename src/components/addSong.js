@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSong } from '../actions';
 import styled from '@emotion/styled';
-import { useNavigate } from 'react-router-dom';
+
 
 // Styled components
 const Container = styled.div`
