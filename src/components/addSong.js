@@ -39,13 +39,12 @@ function AddSong() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
-  const { songs, error } = useSelector(state => state.song);
+  const { songs} = useSelector(state => state.song);
   const lastIndex = songs.length - 1; // Index of the last item
   const lastSong = songs[lastIndex];
   // Last song object
-  console.log(lastSong);
   const newId = Number(lastSong.id) + 1;
-  console.log("Last song:", lastSong);
+ 
   const [formData, setFormData] = useState({ id: String(newId), name: '', uri: '', url: '', year: '' });
   
   const handleInputChange = (e) => {
@@ -53,8 +52,8 @@ function AddSong() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+   
 
     if (!formData.name || !formData.uri || !formData.url || !formData.year) {
       alert("Enter form value");

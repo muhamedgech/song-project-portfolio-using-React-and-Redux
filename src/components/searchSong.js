@@ -1,5 +1,5 @@
 
-import { deleteSong,searchSongFailur } from '../actions';
+import { deleteSong} from '../actions';
 import styled from '@emotion/styled';
 import { useNavigate} from 'react-router-dom';
 
@@ -12,7 +12,7 @@ export default function SearchSong() {
     const { searchTerm } = useParams();
     const [searchData, setSearchData] = useState([]);
    
-    const { songs, error } = useSelector(state => state.song);
+    const { songs} = useSelector(state => state.song);
     const navigate = useNavigate();
     const dispatch=useDispatch();
     
