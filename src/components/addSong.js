@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSong } from '../actions';
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 
 // Styled components
@@ -37,7 +38,7 @@ const Button = styled.button`
 // AddSong component
 function AddSong() {
   const dispatch = useDispatch();
-  
+  const navigate=useNavigate();
   
   const { songs} = useSelector(state => state.song);
   const lastIndex = songs.length - 1; // Index of the last item
@@ -59,16 +60,16 @@ function AddSong() {
       alert("Enter form value");
       
     }
-else
+else{
     try {
       await dispatch(addSong(formData));
       setFormData({ id:String(newId), name: '', uri: '', url: '', year: '' });
-      //navigate(`/`);
+      navigate(`/`);
     } catch (error) {
       console.error(error);
       // Handle error, if any
     }
-  };
+  }};
 
   return (
     <Container>
