@@ -15,7 +15,7 @@ import {
   fetchSongFailure
 } from '../actions';
 
-const url = 'http://localhost:8000/music';
+const url = 'https://tangy-lilac-boater.glitch.me/music';
 
 
 function* fetchSong() {
@@ -45,8 +45,10 @@ function* updateSong(action) {
   try {
     const res = yield call(axios.put, `${url}/${action.payload.id}`, action.payload);
     yield put(updateSongSuccess(res.data));
+    alert("successfully updated");
   } catch (error) {
     yield put(updateSongFailure(error.message));
+    alert("error in update");
   }
 }
 
@@ -56,8 +58,10 @@ function* deleteSong(action) {
     const response=yield call(axios.delete, `${url}/${action.payload}`);
     
     yield put(deleteSongSuccess(response.data));
+    alert("successfully deleted");
   } catch (error) {
     yield put(deleteSongFailure(error.message));
+    alert("not deleted");
   }
 }
 

@@ -46,7 +46,7 @@ function AddSong() {
   // Last song object
   const newId = Number(lastSong.id) + 1;
  
-  const [formData, setFormData] = useState({ id: String(newId), name: '', uri: '', url: '', year: '' });
+  const [formData, setFormData] = useState({ id: newId, name: '', uri: '', url: '', year: '' });
   
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +63,7 @@ function AddSong() {
 else{
     try {
       await dispatch(addSong(formData));
-      setFormData({ id:String(newId), name: '', uri: '', url: '', year: '' });
+      setFormData({ id:newId, name: '', uri: '', url: '', year: '' });
       navigate(`/`);
     } catch (error) {
       console.error(error);
@@ -76,7 +76,7 @@ else{
       <Heading>Song Registration</Heading>
       <Form onSubmit={handleSubmit}>
         <label>Song Id:</label>
-        <Input type='text' name='id' value={String(newId)} onChange={handleInputChange} />
+        <Input type='text' name='id' value={newId} onChange={handleInputChange} />
         <label>Song Title:</label>
         <Input type='text' name='name' value={formData.name} onChange={handleInputChange} />
         <label>Song URI:</label>
