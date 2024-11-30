@@ -12,6 +12,6 @@ const Foot = styled.ul`
 `;
 export default function footer() {
   return (
-        <Foot> 2017 ALX Ethiopia 2017</Foot>
+        <Foot> 2017 ALX Ethiopia</Foot>
      )
 }
