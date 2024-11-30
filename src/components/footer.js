@@ -12,6 +12,6 @@ const Foot = styled.ul`
 `;
 export default function footer() {
   return (
-        <Foot> 2017 ALX Ethiopia Test Project</Foot>
+        <Foot> 2017 ALX Ethiopia  Project</Foot>
      )
 }
